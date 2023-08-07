@@ -104,3 +104,50 @@ table{
 
 }
 
+
+
+.modal{
+    position: absolute;
+    top:calc(50vh - 250px);
+    left:calc(50vw - 250px);
+    width: 500px;
+    height: 500px;
+    background-color: $color1;
+    box-sizing: border-box;
+    padding: 50px;
+    z-index: 100;
+
+    input{
+        box-sizing: border-box;
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        padding:10px;
+        background-color: $color2;
+        color: white;
+        border: none;
+    }
+
+    button{
+        background-color: $color4;
+        color: white;
+        padding: 10px 20px;
+        font-size: 20px;
+        border: none;
+        margin-left: 20px;
+        cursor: pointer;
+    }
+
+}
+
+.grayBack{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    background-color: rgba(128, 128, 128, 0.39);
+    cursor:pointer;
+}
+

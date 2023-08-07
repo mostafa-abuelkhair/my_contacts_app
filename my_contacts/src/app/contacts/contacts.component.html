@@ -39,15 +39,17 @@
 </table>
 
 
-<div class="modal" *ngIf="false">
+<div class="modal" *ngIf="modal">
 
     <span>Name</span><input type="text"  [(ngModel)]="contact.name">
     <span>Phone Number</span><input type="text" [(ngModel)]="contact.phoneNumber">
     <span>Second Number</span><input type="text" [(ngModel)]="contact.secondNumber">
     <span>Email</span><input type="text" [(ngModel)]="contact.email">
 
-    <button (click)="contactAdd()">Add</button>
-    <button (click)="saveEdits()">Save</button>
-    <button>Cancel</button>
+    <button *ngIf="add" (click)="contactAdd()">Add</button>
+    <button *ngIf="!add" (click)="saveEdits()">Save</button>
+    <button (click)="modal = false">Cancel</button>
 
 </div>
+
+<div class="grayBack" *ngIf="modal" (click)="modal = false"></div>

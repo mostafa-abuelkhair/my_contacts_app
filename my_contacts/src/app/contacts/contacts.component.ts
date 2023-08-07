@@ -14,6 +14,10 @@ export class ContactsComponent {
 
   searchValue = "";
 
+  modal = false;
+
+  add = false;
+
   contact = {name:"", phoneNumber:"", secondNumber:"", email:""} 
 
   constructor(  private contactsService:ContactsServiceService  ){
@@ -23,15 +27,19 @@ export class ContactsComponent {
   contactAdd(){
     this.contacts.push({...this.contact});
     this.contactsService.updateContacts();
+    this.modal = false;
   }
 
   newContact(){
-
+    this.modal=true;
+    this.add=true;
   }
 
   editContact(i:number){
     this.contact = {...this.contacts[i]};
     this.editIndex = i;
+    this.modal=true;
+    this.add = false;
   }
 
   deleteContact(i:number){
@@ -42,6 +50,7 @@ export class ContactsComponent {
   saveEdits(){
      this.contacts[this.editIndex] = {...this.contact};
      this.contactsService.updateContacts();
+     this.modal = false;
   }
 
   show(i:number){

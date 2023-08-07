@@ -33,6 +33,7 @@ export class ContactsComponent {
   newContact(){
     this.modal=true;
     this.add=true;
+    this.contact = {name:"", phoneNumber:"", secondNumber:"", email:""};
   }
 
   editContact(i:number){
@@ -52,6 +53,7 @@ export class ContactsComponent {
      this.contactsService.updateContacts();
      this.modal = false;
   }
+
 
   show(i:number){
 

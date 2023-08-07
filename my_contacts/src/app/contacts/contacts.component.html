@@ -1,0 +1,53 @@
+
+<header>
+
+    <h1> My Contacts </h1>
+
+    <div >
+        <input type="text" [(ngModel)]="searchValue" placeholder="Search contact here"> 
+        <button (click)="newContact()"><i class="fa-solid fa-address-book"></i> New </button>
+    </div>
+
+</header>
+
+<table>
+
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Phone Number</th>
+            <th>Second number</th>
+            <th>Email</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <ng-container *ngFor="let contact of contacts; index as i">
+            <tr *ngIf="show(i)">
+                <td>{{contact.name}}</td>
+                <td>{{contact.phoneNumber}}</td>
+                <td>{{contact.secondNumber}}</td>
+                <td>{{contact.email}}</td>
+                <td><i (click)="editContact(i)" class="fa-solid fa-pen-to-square"></i></td>
+                <td><i (click)="deleteContact(i)" class="fa-solid fa-trash"></i></td>
+            </tr>
+        </ng-container>
+
+    </tbody>
+</table>
+
+
+<div class="modal" *ngIf="false">
+
+    <span>Name</span><input type="text"  [(ngModel)]="contact.name">
+    <span>Phone Number</span><input type="text" [(ngModel)]="contact.phoneNumber">
+    <span>Second Number</span><input type="text" [(ngModel)]="contact.secondNumber">
+    <span>Email</span><input type="text" [(ngModel)]="contact.email">
+
+    <button (click)="contactAdd()">Add</button>
+    <button (click)="saveEdits()">Save</button>
+    <button>Cancel</button>
+
+</div>

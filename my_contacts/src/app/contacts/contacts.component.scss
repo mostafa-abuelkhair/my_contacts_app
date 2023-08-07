@@ -1,0 +1,106 @@
+
+$color1:#EFE1D1;
+$color2:#A78295;
+$color3:#3F2E3E;
+$color4:#331D2C;
+
+
+:host{
+    font-family: sans-serif;
+    font-size: 20px;
+    display: block;
+    padding: 0px 2%;
+}
+
+header{
+    
+    h1{
+        text-align: center;
+        letter-spacing: 8px;
+        margin: 70px 0px;
+        color: $color4;
+        font-weight: 900;
+    }
+
+    div{
+
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        input{
+            height: 100%;
+            box-sizing: border-box;
+            outline: 0px;
+            width: 40%;
+            margin: 0px 2%;
+            background-color: $color2;
+            color: white;
+            border: none;
+            padding: 0px 10px;
+        }
+
+        input::placeholder{
+            color: white;
+        }
+
+        button{
+            box-sizing: border-box;
+            width: 120px;
+            height: 100%;
+            margin: 0px 2%;
+            background-color: transparent;
+            text-transform: uppercase;
+            color: $color4;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            i{
+                margin-right: 10px;
+                font-size: 28px;
+            }
+        }
+
+    }
+
+}
+
+i{
+    color: $color4;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+
+table{
+    width: 100%;
+    margin-top: 60px;
+    border-collapse: collapse;
+    font-size: 18px;
+
+    thead tr{
+        background-color: $color3;
+        color: $color1;
+
+        th{
+            padding: 15px;
+        }
+    }
+
+    tr:nth-child(even){background-color:$color2;}
+    tr:nth-child(odd){background-color:$color1}
+
+    tr{
+        
+        td{
+            padding: 10px;
+        }
+    }
+
+}
+
